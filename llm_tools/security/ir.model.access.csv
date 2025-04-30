@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_llm_tools,llm.tools.access,model_llm_tools,base.group_user,1,1,1,0
+access_llm_tools_manager,llm.tools.manager.access,model_llm_tools,base.group_system,1,1,1,1
