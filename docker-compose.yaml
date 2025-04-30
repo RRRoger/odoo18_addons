@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+    volumes:
+      - /Users/chenpeng/workdir/docker_data/odoo18_db:/var/lib/postgresql/data
+    networks:
+      - odoo-network
+    restart: unless-stopped
+
+  odoo:
+    image: odoo:18.0
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+      - "8072:8072"  # 长轮询端口
+    environment:
+      - HOST=postgres
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - /Users/chenpeng/workdir/odoo18_addons:/mnt/extra-addons  # 自定义插件目录
+      - ./_config:/etc/odoo  # 配置文件
+      - /Users/chenpeng/workdir/docker_data/odoo18_data:/var/lib/odoo  # 数据持久化
+      - /Users/chenpeng/workdir/docker_data/odoo18_log:/var/log/odoo  # 数据持久化
+    networks:
+      - odoo-network
+    restart: unless-stopped
+
+networks:
+  odoo-network:
+    driver: bridge
