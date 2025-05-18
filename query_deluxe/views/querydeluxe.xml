@@ -85,6 +85,6 @@
         <field name="view_mode">list,form</field>
     </record>
 
-	<menuitem id="query_deluxe_app_menu" name="Query Deluxe" sequence="-1" groups="query_deluxe.group_querydeluxe" web_icon="query_deluxe,static/description/icon.png"/>
-	<menuitem id="querydeluxe_menu" parent="query_deluxe.query_deluxe_app_menu" name="Queries" sequence="-1" groups="query_deluxe.group_querydeluxe" action="query_deluxe.querydeluxe_action"/>
+	<menuitem id="query_deluxe_app_menu" name="Query Deluxe" sequence="999" groups="query_deluxe.group_querydeluxe" web_icon="query_deluxe,static/description/icon.png"/>
+	<menuitem id="querydeluxe_menu" parent="query_deluxe.query_deluxe_app_menu" name="Queries" sequence="999" groups="query_deluxe.group_querydeluxe" action="query_deluxe.querydeluxe_action"/>
 </odoo>

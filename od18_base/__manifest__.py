@@ -23,6 +23,7 @@
     ],
     'data': [
         'views/res_config.xml',
+        'views/menu.xml',
     ],
     'images': [
         'static/description/main_screenshot.png',
