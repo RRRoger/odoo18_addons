@@ -8,7 +8,16 @@
     'support': 'i@roger.me',
     'category': 'Extra Tools',
     'version': '1.0',
-    'depends': ['base_setup'],
+    'depends': [
+        'base_setup',
+        'web',
+        'mail',
+        'muk_web_theme',
+        'queue_job',
+        'web_notify',
+        'web_refresher',
+        'web_remember_tree_column_width',
+    ],
     'demo': [
         'data/demo.xml',
     ],
@@ -25,5 +34,5 @@
     },
     'installable': True,
     'auto_install': False,
-    'application': False,
+    'application': True,
 }
