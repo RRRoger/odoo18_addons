@@ -2,6 +2,8 @@ services:
   postgres:
     image: postgres:16
     container_name: odoo18-postgres
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=odoo
