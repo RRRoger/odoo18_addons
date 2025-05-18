@@ -16,6 +16,7 @@
         <field name="model">llm.tools</field>
         <field name="arch" type="xml">
             <form>
+                <button name="testing" type="object" string="测试" class="btn-primary"/>
                 <sheet>
                     <group>
                         <field name="name"/>

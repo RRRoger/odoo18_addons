@@ -11,8 +11,8 @@ class LLMIntegration(models.Model):
     is_active = fields.Boolean(string='是否激活', default=True)
     last_used = fields.Datetime(string='最后使用时间')
 
-    def test_connection(self):
-        # 这里添加测试连接的逻辑
+    def testing(self):
+        self.env.user.notify_success(message='My success message')
         return True
 
     def call_qianwen(self, query, api_key=None):
