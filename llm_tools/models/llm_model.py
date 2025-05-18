@@ -13,6 +13,7 @@ class LLMIntegration(models.Model):
 
     def testing(self):
         self.env.user.notify_success(message='My success message')
+        self.with_delay().call_qianwen('你好')
         return True
 
     def call_qianwen(self, query, api_key=None):
